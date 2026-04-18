@@ -1,0 +1,9 @@
+fastapi
+python-multipart
+uvicorn[standard]
+python-dotenv
+requests
+httpx
+pydantic
+reportlab
+google-genai

@@ -1,0 +1,208 @@
+{
+  "ingredient_aliases": {
+    "eg": "egg",
+    "eggg": "egg",
+    "eggs": "egg",
+    "pnr": "paneer",
+    "panear": "paneer",
+    "panner": "paneer",
+    "bnana": "banana",
+    "banan": "banana",
+    "bananna": "banana",
+    "tomatoe": "tomato",
+    "tomatoes": "tomato",
+    "potatoe": "potato",
+    "potatoes": "potato",
+    "aloo": "potato",
+    "alu": "potato",
+    "chiken": "chicken",
+    "chcken": "chicken",
+    "chickn": "chicken",
+    "mlik": "milk",
+    "mlk": "milk",
+    "bred": "bread",
+    "brd": "bread",
+    "chese": "cheese",
+    "chees": "cheese",
+    "onoin": "onion",
+    "onioon": "onion",
+    "galic": "garlic",
+    "garlc": "garlic",
+    "ginger": "ginger",
+    "carrot": "carrot",
+    "carots": "carrot",
+    "rice": "rice",
+    "roti": "roti",
+    "chapati": "roti",
+    "dal": "dal",
+    "daal": "dal",
+    "lentil": "dal"
+  },
+
+  "ingredient_categories": {
+    "base": ["bread", "rice", "roti", "pasta", "oats", "noodles", "flour", "maida", "semolina", "poha", "idli", "dosa batter"],
+    "protein": ["egg", "paneer", "chicken", "dal", "tofu", "beans", "lentils", "mutton", "fish", "prawn", "soya", "chickpeas", "rajma"],
+    "flavor": ["butter", "jam", "honey", "sugar", "salt", "oil", "ghee", "cream", "cheese", "yogurt", "curd"],
+    "vegetable": ["onion", "tomato", "potato", "carrot", "capsicum", "spinach", "cabbage", "cauliflower", "brinjal", "peas", "mushroom", "corn"],
+    "spice": ["garlic", "ginger", "cumin", "turmeric", "coriander", "chilli", "pepper", "garam masala", "mustard"],
+    "fruit": ["banana", "mango", "apple", "lemon", "lime", "coconut", "pineapple", "strawberry"],
+    "dairy": ["milk", "curd", "yogurt", "cream", "butter", "ghee", "cheese", "paneer"]
+  },
+
+  "veg_rules": {
+    "non_veg_keywords": ["chicken", "mutton", "fish", "prawn", "beef", "pork", "lamb", "meat", "egg", "tuna", "sardine", "anchovy", "bacon", "ham", "sausage"],
+    "note": "If is_veg=true, any ingredient matching non_veg_keywords must be excluded. Also validate AI output does not contain these terms."
+  },
+
+  "synergy_pairs": [
+    {"ingredients": ["milk", "lemon"], "note": "Can be used to make homemade paneer (chenna). Don't discard this combo."},
+    {"ingredients": ["egg", "bread"], "note": "Classic sandwich or French toast combination."},
+    {"ingredients": ["banana", "milk"], "note": "Smoothie or milkshake — no cooking required."},
+    {"ingredients": ["bread", "butter", "jam"], "note": "Simple breakfast toast — minimal cooking."},
+    {"ingredients": ["rice", "egg"], "note": "Fried rice — pan-based quick meal."},
+    {"ingredients": ["paneer", "capsicum"], "note": "Stir-fry or tikka — dry preparation works well."},
+    {"ingredients": ["onion", "tomato", "garlic"], "note": "Classic curry base — can be used for any gravy dish."},
+    {"ingredients": ["oats", "milk"], "note": "Nutritious breakfast porridge."}
+  ],
+
+  "conflict_pairs": [
+    {"ingredients": ["milk", "fish"], "note": "Traditionally discouraged in Ayurveda. Suggest using them separately."},
+    {"ingredients": ["honey", "ghee"], "note": "Equal proportions are traditionally avoided — use different ratios."}
+  ],
+
+  "few_shot_examples": [
+    {
+      "ingredients": ["egg"],
+      "dishes": ["Masala Omelette", "Egg Bhurji", "Boiled Egg Salad", "Egg Toast"],
+      "note": "Vary based on spice level and preference"
+    },
+    {
+      "ingredients": ["egg", "bread"],
+      "dishes": ["Egg Sandwich", "French Toast", "Egg Toast"],
+      "note": "Bread-based egg dish, quick breakfast"
+    },
+    {
+      "ingredients": ["bread", "butter", "jam"],
+      "dishes": ["Butter Toast with Jam", "Jam Sandwich"],
+      "note": "Simple breakfast, minimal cooking"
+    },
+    {
+      "ingredients": ["banana", "milk"],
+      "dishes": ["Banana Milkshake", "Banana Smoothie"],
+      "note": "Blended drink, no heat needed"
+    },
+    {
+      "ingredients": ["banana"],
+      "dishes": ["Banana Halwa", "Caramelised Banana", "Banana Pancake", "Banana Oats Bowl"],
+      "note": "Sweet dessert or snack"
+    },
+    {
+      "ingredients": ["paneer", "capsicum"],
+      "dishes": ["Paneer Tikka", "Paneer Capsicum Stir Fry", "Kadai Paneer"],
+      "note": "Dry or semi-dry sabzi style"
+    },
+    {
+      "ingredients": ["paneer"],
+      "dishes": ["Paneer Bhurji", "Paneer Butter Masala", "Shahi Paneer", "Paneer Paratha filling"],
+      "note": "Protein-rich, adapt sauce based on cuisine style"
+    },
+    {
+      "ingredients": ["potato", "onion"],
+      "dishes": ["Aloo Sabzi", "Aloo Pyaaz Stir Fry", "Hash Browns"],
+      "note": "Classic comfort food"
+    },
+    {
+      "ingredients": ["tomato", "onion", "garlic"],
+      "dishes": ["Tomato Soup", "Tomato Gravy Base", "Onion Tomato Chutney"],
+      "note": "Base for many curries or standalone soup"
+    },
+    {
+      "ingredients": ["rice", "egg"],
+      "dishes": ["Egg Fried Rice", "Egg Pulao"],
+      "note": "Rice-dominant dish with egg mixed in"
+    },
+    {
+      "ingredients": ["oats", "milk"],
+      "dishes": ["Oatmeal Porridge", "Oats Kheer"],
+      "note": "Healthy quick breakfast"
+    },
+    {
+      "ingredients": ["chicken", "onion", "tomato"],
+      "dishes": ["Chicken Curry", "Chicken Masala"],
+      "note": "Non-veg — only suitable if is_veg is false"
+    },
+    {
+      "ingredients": ["milk", "lemon"],
+      "dishes": ["Homemade Paneer (Chenna)", "Lemon Curd"],
+      "note": "Synergy pair — milk curdles with lemon to make paneer"
+    }
+  ],
+
+  "food_style_hints": {
+    "Gujarati": {
+      "flavor": "slightly sweet, mild, low oil",
+      "avoid": "very spicy, heavy cream sauces",
+      "prefer": "dal, sabzi, khichdi, rotli, shaak, undhiyu"
+    },
+    "Street Food": {
+      "flavor": "bold, spicy, tangy, quick",
+      "avoid": "slow-cooked stews",
+      "prefer": "chaat, pav bhaji, vada pav, sandwiches, rolls, bhel"
+    },
+    "South Indian": {
+      "flavor": "tangy, coconut-based, rice-centric",
+      "avoid": "North Indian cream gravies",
+      "prefer": "dosa, sambar, rasam, rice dishes, coconut chutneys, uttapam"
+    },
+    "Punjabi": {
+      "flavor": "rich, buttery, heavy spices",
+      "avoid": "bland or sweet dishes",
+      "prefer": "dal makhani, butter chicken, rajma, parathas, lassi"
+    },
+    "Breakfast": {
+      "flavor": "light, quick, comforting",
+      "avoid": "heavy curries",
+      "prefer": "toast, omelettes, poha, upma, smoothies, sandwiches"
+    },
+    "Healthy": {
+      "flavor": "light, nutritious, low-fat",
+      "avoid": "deep-fried, heavy cream, excess sugar",
+      "prefer": "salads, soups, grilled dishes, steamed items, smoothies"
+    },
+    "Bengali": {
+      "flavor": "mustard oil, panch phoron, subtle sweetness, fish-friendly",
+      "avoid": "Punjabi-style heavy cream gravies unless adapted",
+      "prefer": "shorshe, jhol, begun bhaja, light fish or veg curries, rice"
+    },
+    "Rajasthani": {
+      "flavor": "robust, dried spices, gram flour, tangy chutneys, low moisture",
+      "avoid": "coconut-heavy South Indian profiles",
+      "prefer": "gatte ki sabzi, ker sangri, dal baati, bajra roti, pickles"
+    },
+    "Italian": {
+      "flavor": "herbs (basil, oregano), olive oil, tomato, garlic, cheese",
+      "avoid": "garam masala–heavy Indian gravies unless fusion is requested",
+      "prefer": "pasta, risotto-style rice dishes, simple salads, grilled veg"
+    },
+    "Chinese": {
+      "flavor": "soy, ginger-garlic, high heat stir-fry, sesame",
+      "avoid": "slow dairy-heavy Indian curries as default",
+      "prefer": "stir-fry, fried rice style, noodles, quick wok dishes"
+    },
+    "Indo-Chinese": {
+      "flavor": "Indian-Chinese fusion — soy, chilli, capsicum, cornflour gloss",
+      "avoid": "authentic regional Chinese only",
+      "prefer": "hakka noodles, manchurian-style gravies, fried rice, chilli dishes"
+    },
+    "Mexican": {
+      "flavor": "lime, cumin, beans, corn, fresh salsa, mild–hot chillies",
+      "avoid": "Indian tadka as primary flavor",
+      "prefer": "bowls, wraps, bean stews, simple grilled fillings"
+    }
+  },
+
+  "combination_logic": {
+    "note": "When base + protein present, make a full meal. Base + flavor = snack. Protein alone = protein-focused dish.",
+    "priority": ["base + protein → full meal", "base + flavor → snack/toast", "protein alone → curry or stir-fry", "fruit + dairy → drink or dessert", "vegetable + spice → sabzi"]
+  }
+}

@@ -1,0 +1,92 @@
+/* 
+   Tailwind CSS Base, Components, and Utilities 
+   These import Tailwind's default styles, utility classes, and components.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import modern font for headings */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* 
+   Root variables for theme colors 
+   These define the foreground and background colors used throughout the app.
+*/
+:root {
+  --foreground-rgb: 0, 0, 0; /* Default text color */
+  --background-start-rgb: 214, 219, 220; /* Light grayish background */
+  --background-end-rgb: 255, 255, 255; /* White background */
+}
+
+/* 
+   Dark mode theme variables (Currently commented out)
+   Uncomment if you want to support dark mode.
+*/
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+*/
+
+/* 
+   Global body styles 
+   Sets the text color dynamically based on the foreground variable.
+*/
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+/* 
+   Tailwind utility extension 
+   Defines a custom utility class for balanced text wrapping.
+*/
+@layer utilities {
+  .text-balance {
+    text-wrap: balance; /* Improves text readability by balancing line breaks */
+  }
+  /* z-index layers for consistent stacking across the app */
+  .z-overlay {
+    z-index: 10;
+  }
+  .z-header {
+    z-index: 50;
+  }
+  .z-modal {
+    z-index: 100;
+  }
+  .z-modal-top {
+    z-index: 150;
+  }
+}
+
+/* 
+   Global scrollbar behavior fix 
+   Ensures that the scrollbar space remains reserved, preventing layout shifts 
+   when elements like dropdowns or modals open.
+*/
+html {
+  scrollbar-gutter: stable; /* Prevents layout shift by reserving space for the scrollbar */
+}
+
+/*
+   Base heading styles for consistent hierarchy and spacing
+*/
+@layer base {
+  h1 {
+    @apply text-3xl md:text-4xl font-bold mt-6 mb-4;
+    font-family: 'Inter', sans-serif;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold mt-6 mb-4;
+    font-family: 'Inter', sans-serif;
+  }
+  h3 {
+    @apply text-xl md:text-2xl font-semibold mt-4 mb-2;
+    font-family: 'Inter', sans-serif;
+  }
+}

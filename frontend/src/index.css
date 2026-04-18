@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Reset ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-skeleton-pulse {
+  animation: skeleton-pulse 1.35s ease-in-out infinite;
+}
+
+body {
+  background-color: #FFF8F2; /* food-bg */
+  color: #2D3748; /* food-dark */
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 53, 0.3); /* muted primary */
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 107, 53, 0.5); }
+
+/* ── UI Components ─────────────────────────────── */
+@layer components {
+  /* White Card */
+  .glass-panel {
+    @apply bg-white rounded-3xl border border-white/50 shadow-soft backdrop-blur-xl;
+  }
+
+  /* Interactive White Card */
+  .glass-panel-hover {
+    @apply glass-panel transition-all duration-300;
+  }
+  .glass-panel-hover:hover {
+    @apply shadow-xl border-food-secondary/30;
+    transform: translateY(-2px);
+  }
+
+  /* Orange/Yellow Primary Pill Button */
+  .btn-primary {
+    @apply inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white
+           transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-food-primary/35
+           shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
+           disabled:hover:translate-y-0 disabled:active:scale-100;
+    background: linear-gradient(135deg, #FF6B35 0%, #FFD166 100%);
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-90 cursor-wait;
+    filter: saturate(0.95);
+  }
+
+  /* Outline/Ghost Pill Button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm
+           text-food-muted transition-all duration-300 border border-slate-200 bg-white hover:bg-slate-50 hover:text-food-dark hover:border-slate-300 active:scale-[0.97] shadow-sm
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-food-primary/30;
+  }
+
+  /* Action Icon Button (Small) */
+  .btn-icon-light {
+    @apply p-2.5 rounded-full bg-white border border-slate-200 text-food-muted hover:text-food-primary hover:bg-orange-50 hover:border-orange-200 transition-all active:scale-90 shadow-sm;
+  }
+}
+
+/* Hide scrollbars for specialized horizontal scrolling */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#root { position: relative; z-index: 1; }

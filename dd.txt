@@ -1,0 +1,38 @@
+cd E:\heloo
+python -m uvicorn app.main:app --reload
+
+backend
+
+
+cd E:\heloo\frontend
+npm install
+npm run dev
+
+frontend
+
+
+pip3 install -r requirements.txt
+
+url:http://localhost:5173
+
+
+
+////////////////////////
+
+
+python3.11 -m venv venv
+
+source venv/bin/activate
+
+pip3 install -r requirements.txt
+
+python -m uvicorn app.main:app --reload
+
+////////////////////////////
+cd frontend
+npm install
+chmod +x node_modules/.bin/vite
+
+
+npm run dev
+
